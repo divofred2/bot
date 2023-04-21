@@ -14,6 +14,8 @@
   "author": "Fredrick Emmanuel",
   "license": "ISC",
   "dependencies": {
+    "dotenv": "^16.0.3",
+    "openai": "^3.2.1",
     "qrcode-terminal": "^0.12.0",
     "whatsapp-web.js": "^1.19.5"
   }
