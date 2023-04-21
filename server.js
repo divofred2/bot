@@ -14,7 +14,6 @@ async function runCompletion(message){
     prompt: message,
     max_tokens: 100
   })
-  console.log(completion.data.choices);
   return completion.data.choices[0].text
 }
 const client = new Client({
@@ -39,7 +38,6 @@ client.on('message', async message => {
   if(mentions[0]?.isMe || !chat.isGroup){
     const lowerMessage = message.body.toLowerCase();
     let lowerMessage1 = lowerMessage.split(' ')
-    console.log(lowerMessage1);
     if (lowerMessage1[1] === "set") {
       //Use author for group chat
       if(message.from !== '2348126887684@c.us' && message.author !== "2348126887684@c.us"){
@@ -83,7 +81,6 @@ client.on('message', async message => {
           return message.reply('Must be used in a group')
         }
     } else{
-      console.log(message);
       runCompletion(message.body).then(result=> message.reply(result) );
     } 
     }
