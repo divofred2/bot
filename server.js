@@ -17,7 +17,11 @@ async function runCompletion(message){
   return completion.data.choices[0].text
 }
 const client = new Client({
-  authStrategy: new LocalAuth()
+  authStrategy: new LocalAuth(),
+  puppeteer: {
+    args: ['--no-sandbox'],
+  },
+  
 });
 
 client.on('qr', qr => {
